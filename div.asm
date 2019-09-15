@@ -13,10 +13,10 @@ section	.text
 	
 _start:             ;tell linker entry point
    mov	ax,'9'      ;the divident must be ax or other respective register
-   sub  ax,'0'      ;convert to number
+   sub   ax,'0'      ;convert to number
 	
    mov 	bl,'2'      ;the divisor shall be in bl
-   sub  bl,'0'      ;convert to number
+   sub   bl,'0'      ;convert to number
    div 	bl          ;actual division, quotient shall be in al and remainder in ah
    add	al,'0'      ;convert to ascii	
    add	ah,'0'      ;convert to ascii	
