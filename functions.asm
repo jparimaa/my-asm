@@ -18,7 +18,7 @@ next_char:
     jmp  next_char
  
 finished:
-    sub  eax, ebx ;how many bytes between start of the string and end (null terminator)
+    sub  eax, ebx   ;how many bytes between start of the string and end (null terminator)
     pop  ebx
     ret
  
@@ -32,10 +32,10 @@ print_string:
     push eax
     call string_length
  
-    mov  edx, eax ;length of the string
+    mov  edx, eax   ;length of the string
     pop  eax
  
-    mov  ecx, eax ;string to be printed
+    mov  ecx, eax   ;string to be printed
     mov  ebx, STDOUT
     mov  eax, SYS_WRITE
     int  80h
@@ -43,6 +43,20 @@ print_string:
     pop  ebx
     pop  ecx
     pop  edx
+    ret
+
+;print the string with linefeed
+;in: string in eax
+print_string_LF:
+    call    print_string
+ 
+    push eax            ;push eax onto the stack to preserve it while we use the eax register in this function
+    mov  eax, 0Ah       ;0Ah is the ascii character for a linefeed
+    push eax            ;push the linefeed onto the stack so we can get the address
+    mov  eax, esp       ;move the address of the current stack pointer into eax for printing
+    call print_string
+    pop  eax            ;remove our linefeed character from the stack
+    pop  eax            ;restore the original value of eax before our function was called
     ret
   
 ;quit the program succesfully
