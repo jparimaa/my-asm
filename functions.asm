@@ -1,8 +1,15 @@
 SYS_EXIT  equ 1
+SYS_FORK  equ 2
 SYS_READ  equ 3
 SYS_WRITE equ 4
+SYS_OPEN  equ 5
+SYS_CREAT equ 8
+SYS_TIME  equ 13
+
 STDIN     equ 0
 STDOUT    equ 1
+
+O_RDONLY  equ 0
 
 ;calculate the length of the string
 ;in: string in eax 
