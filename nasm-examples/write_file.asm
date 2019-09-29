@@ -1,3 +1,5 @@
+;write 'Hello World!' to a file
+
 %include 'functions.asm'
  
 SECTION .data
@@ -20,3 +22,6 @@ _start:
     int     80h           
  
     call    quit          
+
+;$ ./write_file.out && cat readme.txt 
+;Hello world!

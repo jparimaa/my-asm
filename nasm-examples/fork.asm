@@ -1,3 +1,5 @@
+;fork a child process and print time
+
 %include 'functions.asm'
  
 SECTION .data
@@ -32,3 +34,10 @@ child:
     call print_int_LF
  
     call quit           
+
+;possible output due to concurrency
+;$ ./fork.out 
+;This is the parent process
+;1This is the child process5
+;691754699071439
+;013

@@ -1,4 +1,5 @@
-;constants
+;print 10 stars (*) in a loop
+
 SYS_EXIT  equ 1
 SYS_READ  equ 3
 SYS_WRITE equ 4
@@ -27,3 +28,15 @@ l1:
 exit:  
     mov eax, SYS_EXIT
     int 0x80
+
+;$ ./loop.out 
+;*
+;*
+;*
+;*
+;*
+;*
+;*
+;*
+;*
+;*

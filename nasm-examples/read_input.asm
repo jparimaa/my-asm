@@ -1,3 +1,5 @@
+;read user input and print it
+
 %include 'functions.asm'
  
 SECTION .data
@@ -27,3 +29,7 @@ _start:
     call print_string   ;call our print function
  
     call quit
+
+;$ ./read_input.out 
+;Please enter your name: Steve
+;Hello, Steve

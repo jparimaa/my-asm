@@ -1,3 +1,5 @@
+;another hello world example with included functions
+
 %include 'functions.asm'
  
 SECTION .data
@@ -16,3 +18,7 @@ _start:
     call print_string
  
     call quit
+
+;$ ./include.out 
+;Hello, brave new world!
+;Printing another string, yei!

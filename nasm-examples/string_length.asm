@@ -1,3 +1,5 @@
+;calculates the length of the string and prints the whole string
+
 SYS_EXIT  equ 1
 SYS_READ  equ 3
 SYS_WRITE equ 4
@@ -40,3 +42,6 @@ finished:
     sub  eax, ebx ;how many bytes between start of the string and end (null terminator)
     pop  ebx
     ret
+
+;$ ./string_length.out 
+;Hello, brave new world!

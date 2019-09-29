@@ -1,3 +1,5 @@
+;print the contents of the file README.md
+
 %include 'functions.asm'
  
 SECTION .data
@@ -25,3 +27,9 @@ _start:
     call    print_string_LF
  
     call    quit
+
+;$ ./print_file.out 
+;# Examples in NASM
+;
+;Small examples in NASM. Each .asm file has a description and a sample output.
+

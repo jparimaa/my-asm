@@ -1,3 +1,5 @@
+;collection of useful functions and constants
+
 SYS_EXIT  equ 1
 SYS_FORK  equ 2
 SYS_READ  equ 3

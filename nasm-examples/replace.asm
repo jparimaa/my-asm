@@ -1,7 +1,12 @@
-section	.text
-   global _start     ;must be declared for linker (ld)
+;replace data in string
 
-_start:             ;tell linker entry point
+section	.text
+   global _start
+
+section	.data
+hello db 'Hello World',0xA
+
+_start:
 	
    ;write hello world
    mov	edx,12      ;message length
@@ -10,8 +15,8 @@ _start:             ;tell linker entry point
    mov	eax,4       ;system call number (sys_write)
    int	0x80        ;call kernel
 	
-   mov	[hello],  dword 'Brav'    ; Change Hello to Brave
-   mov	[hello+4],  byte 'e'    ; Change Hello to Brave
+   mov	[hello],  dword 'Brav'  ;change Hello to Brave
+   mov	[hello+4],  byte 'e'    ;change Hello to Brave
 	   
    ;write brave world
    mov	edx,12      ;message length
@@ -23,5 +28,6 @@ _start:             ;tell linker entry point
    mov	eax,1       ;system call number (sys_exit)
    int	0x80        ;call kernel
 
-section	.data
-hello db 'Hello World',0xA
+;$ ./replace.out 
+;Hello World
+;Brave World

@@ -1,3 +1,5 @@
+;print the input arguments 
+
 %include 'functions.asm'
 
 SECTION .text
@@ -17,3 +19,8 @@ nextArg:
 
 noMoreArgs:
     call quit
+
+;$ ./arguments.out arg1 arg2
+;./arguments.out
+;arg1
+;arg2

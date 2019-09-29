@@ -1,3 +1,5 @@
+;divide 91 by 9 and print the result
+
 %include 'functions.asm'
  
 SECTION .data
@@ -16,3 +18,6 @@ _start:
     mov  eax, edx       ;move our remainder into eax
     call print_int_LF   ;call our integer printing with linefeed function
     call quit
+
+;$ ./div.out 
+;10 remainder 1

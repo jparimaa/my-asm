@@ -1,4 +1,5 @@
-;constants
+;jump if 1 is less than 5
+
 SYS_EXIT  equ 1
 SYS_READ  equ 3
 SYS_WRITE equ 4
@@ -40,3 +41,6 @@ exit:
    mov eax, SYS_EXIT   
    xor ebx, ebx 
    int 0x80
+
+;$ ./jump.out 
+;Number is less than five
